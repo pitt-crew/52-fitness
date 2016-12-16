@@ -2,7 +2,7 @@
  * 52 Fitness app
  * Authors: Ryan Walter and Mike DeAngelis
  * Contact Info: xxx
- * 
+ *
  */
 
 var React = require('react');
