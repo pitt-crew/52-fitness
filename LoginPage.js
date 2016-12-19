@@ -1,5 +1,5 @@
 'use strict';
- 
+
 import React, { Component } from 'react'
 import {
   StyleSheet,
@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import AppButton from './app/components/Button';
+import AppButton from './app/components/Button/Button';
 /*Add any other components that we need on this screen here*/
 
 var styles = StyleSheet.create({
@@ -77,8 +77,8 @@ class LoginPage extends Component {
               secureTextEntry="true"
               placeholder='Password' />
           </View>
-          <View>  
-            <Button 
+          <View>
+            <AppButton
               title="Login"
               color="#000"
               accessibilityLabel="Learn more about this purple button" />
@@ -86,8 +86,8 @@ class LoginPage extends Component {
           <View>
             <Text>Or Register Here</Text>
           </View>
-	        
-	      </View>	
+
+	      </View>
     	);
   	}
 }
