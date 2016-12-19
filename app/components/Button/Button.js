@@ -1,18 +1,32 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { TouchableHighlight, Text } from 'react-native';
+import { Container, Content, Button } from 'native-base';
 
 // var styles = require('styles');
 
-class AppButton extends Component {
-  render() {
-    return (
-        <TouchableHighlight>
-        	<Text>I'm a button</Text>
-		</TouchableHighlight>
-    );
-  }
-}
+export default class AppButton extends Component {
+	props: {
+    	title: string,
+  	};
 
-  module.exports = AppButton;
+  	static propTypes = {
+  		title: React.PropTypes.string.isRequired,
+	}
+
+  	render() {
+  		const {
+      		title,
+    	} = this.props;
+
+    	return (
+        	<Container>
+                <Content>
+                    <Button 
+                    	block 
+                    	large> {title} </Button>
+                </Content>
+            </Container>
+    	);
+  	}
+}
