@@ -23,7 +23,8 @@ export default class AppButton extends Component {
         	<Container>
                 <Content>
                     <Button 
-                    	block 
+                    	block
+                    	primary
                     	large> {title} </Button>
                 </Content>
             </Container>

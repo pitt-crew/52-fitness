@@ -9,7 +9,7 @@ import {
   ActivityIndicator,
   Image
 } from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Badge, Button, InputGroup, Input, Icon, H1, H2, Text } from 'native-base';
+import { Container, Header, Title, Content, Footer, FooterTab, Badge, Button, InputGroup, Input, Icon, H1, H2, H3, Text } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import appTheme from './app/themes/52fitnessTheme';
 import AppButton from './app/components/Button/Button';
@@ -70,7 +70,7 @@ var styles = StyleSheet.create({
   }
 });
 
-class LoginPage extends Component {
+class homePage extends Component {
   	render() {
     	return (
         <Container theme={appTheme} style={styles.container}> 
@@ -86,20 +86,13 @@ class LoginPage extends Component {
 
               <Row size={75} style={styles.landingContent}>
                 <Icon style={styles.headerIcon} name="md-trophy" />
-                  <H1>Welcome</H1>
-                  <H2>to 52 Fitness</H2>
+                  <H1>Welcome, Mike</H1>
+                  <H3>You've completed 2 workouts fo far this week</H3>
               </Row>
 
               <Row size={25} style={styles.textFieldGroup}>
-                <InputGroup borderType='underline' >
-                  <Icon name="ios-contact"></Icon>
-                  <Input placeholder='Username' />
-               </InputGroup>
-               <InputGroup borderType='underline' >
-                  <Icon name="md-lock"></Icon>
-                  <Input secureTextEntry="true" placeholder='Password' />
-               </InputGroup>
-               <Button block>Log In</Button>
+
+               
               </Row>
 
             </Grid>
@@ -130,27 +123,26 @@ class LoginPage extends Component {
               title="Login here" />
           </Content>*/}
 
-          {/*<Footer>
+          <Footer>
               <FooterTab>
                   <Button transparent>
-                    Phone
-                      <Icon name='ios-call' />
+                      Home
+                      <Icon name='ios-home' />
                   </Button>
                   <Button>
-                    hello
-                      <Icon name='ios-apps-outline' />
+                    Browse
+                      <Icon name='ios-list' />
                   </Button>
                   <Button>
-                      <Icon name='ios-camera-outline' />
-                  </Button>
-                  <Button active>
-                      <Icon name='ios-compass' />
+                    Search
+                      <Icon name='ios-search' />
                   </Button>
                   <Button>
-                      <Icon name='ios-contact-outline' />
+                    Add Workout
+                      <Icon name='ios-add-circle' />
                   </Button>
               </FooterTab>
-          </Footer>*/}
+          </Footer>
 
 
         </Container>
@@ -159,4 +151,4 @@ class LoginPage extends Component {
 }
 
   //allows login page use in other files
-  module.exports = LoginPage;
+  module.exports = homePage;

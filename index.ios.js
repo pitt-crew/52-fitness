@@ -8,6 +8,9 @@
 var React = require('react');
 var ReactNative = require('react-native');
 var LoginPage = require('./LoginPage');
+var homePage = require('./homePage');
+var workoutList = require('./workoutList');
+
 
 /*Add any other components that we need on this screen here*/
 
@@ -23,8 +26,8 @@ export default class fiftytwofitness extends React.Component {
       <ReactNative.NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: '52 Fitness',
-          component: LoginPage
+          title: 'Workout List',
+          component: workoutList
         }}/>
     );
   }
