@@ -26,17 +26,18 @@ class workout extends Component {
               style={styles.workoutBackground} >
 
           <Content>
-            <Card>
-              <CardItem style={styles.card}>
-                <Image source={require('./app/images/queen_of_hearts.png')} style={styles.playingCard}>
+            <Card style={styles.card}>
+              <CardItem style={styles.playingCard}>
+                <Image source={require('./app/images/queen_of_hearts.png')} style={styles.playingCardImage}>
 
                 </Image>
               </CardItem>
 
-              <CardItem style={styles.playingCardDescription}>
-                <H1>14 Pushups!</H1>
-              </CardItem>
+
             </Card>
+            <Text style={styles.playingCardDescription}>
+              14 Pushups!
+            </Text>
           </Content>
           </Image>
 
@@ -67,16 +68,25 @@ class workout extends Component {
 
 var styles = StyleSheet.create({
   card: {
-    alignItems: 'center',
+    marginLeft: 27,
+    marginRight: 27,
+    paddingLeft: 6.5,
     justifyContent: 'center'
   },
   playingCard: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  playingCardImage: {
     width: 310,
     height: 450,
     resizeMode: 'contain',
   },
   playingCardDescription: {
-    alignItems: 'center',
+    textAlign: 'center',
+    fontSize: 40,
+    paddingTop: 20,
+    color: '#11FF05',
   },
   workoutBackground: {
     flex: 1,
