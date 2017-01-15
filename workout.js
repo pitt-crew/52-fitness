@@ -15,18 +15,42 @@ import appTheme from './app/themes/52fitnessTheme';
 import AppButton from './app/components/Button/Button';
 /*Add any other components that we need on this screen here*/
 
-const deck = [
-  {
-    text: '14 Pushups!',
-    image: require('./app/images/queen_of_hearts.png')
-  },
-  {
-    text: '2 Squats!',
-    image: require('./app/images/2_of_clubs.png')
-  }
-]
 class workout extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        deck: this.makeDeck()
+      };
+      // this.deck;
+
+    }
+
+    componentWillMount() {
+      this.makeDeck();
+    }
+
+    makeDeck() {
+      const ranks = new Array("ace", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+                    "jack", "queen", "king");
+      const suits = new Array("clubs", "diamonds", "hearts", "spades");
+
+      let deck = [];
+      let imgUrl;
+
+      for(let i = 0; i < suits.length; i++) {
+        for(let j = 0; j < ranks.length; j++) {
+          imgUrl = './app/images/' + ranks[j] + '_of_' + suits[i] + '.png';
+          deck.push({
+            text: '' + ranks[j] + ' Pushups',
+            image: imgUrl
+          })
+        }
+      }
+      return deck;
+    }
+
   	render() {
+
     	return (
         <Container theme={appTheme}>
           <Header>
@@ -37,12 +61,12 @@ class workout extends Component {
 
           <Content>
             <DeckSwiper
-              dataSource={deck}
+              dataSource={this.state.deck}
               renderItem={item =>
                 <View>
                   <Card style={styles.card}>
                   <CardItem style={styles.playingCard}>
-                  <Image source={item.image} style={styles.playingCardImage}>
+                  <Image source={require(item.image)} style={styles.playingCardImage}>
 
                   </Image>
                   </CardItem>
@@ -101,7 +125,7 @@ var styles = StyleSheet.create({
   playingCardDescription: {
     textAlign: 'center',
     fontSize: 40,
-    paddingTop: 20,
+    paddingTop: 25,
     color: '#11FF05',
   },
   workoutBackground: {
@@ -111,5 +135,5 @@ var styles = StyleSheet.create({
   }
 });
 
-  //allows login page use in other files
+  //allows workout page use in other files
   module.exports = workout;

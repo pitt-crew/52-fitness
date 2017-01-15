@@ -2,7 +2,7 @@
  * 52 Fitness app
  * Authors: Ryan Walter and Mike DeAngelis
  * Contact Info: xxx
- * 
+ *
  */
 
 var React = require('react');
@@ -10,6 +10,7 @@ var ReactNative = require('react-native');
 var LoginPage = require('./LoginPage');
 var homePage = require('./homePage');
 var workoutList = require('./workoutList');
+var workout = require('./workout')
 
 
 /*Add any other components that we need on this screen here*/
@@ -26,8 +27,8 @@ export default class fiftytwofitness extends React.Component {
       <ReactNative.NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'Workout List',
-          component: workoutList
+          title: 'Workout',
+          component: workout
         }}/>
     );
   }
