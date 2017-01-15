@@ -9,12 +9,22 @@ import {
   ActivityIndicator,
   Image
 } from 'react-native';
-import { Container, Header, Title, Content, Card, CardItem, Footer, FooterTab, Badge, Button, InputGroup, Input, Icon, H1, H2, H3, Text } from 'native-base';
+import { Container, Header, Title, Content, Card, CardItem, DeckSwiper, Footer, FooterTab, Badge, Button, InputGroup, Input, Icon, H1, H2, H3, Text } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import appTheme from './app/themes/52fitnessTheme';
 import AppButton from './app/components/Button/Button';
 /*Add any other components that we need on this screen here*/
 
+const deck = [
+  {
+    text: '14 Pushups!',
+    image: require('./app/images/queen_of_hearts.png')
+  },
+  {
+    text: '2 Squats!',
+    image: require('./app/images/2_of_clubs.png')
+  }
+]
 class workout extends Component {
   	render() {
     	return (
@@ -26,15 +36,19 @@ class workout extends Component {
               style={styles.workoutBackground} >
 
           <Content>
-            <Card style={styles.card}>
-              <CardItem style={styles.playingCard}>
-                <Image source={require('./app/images/queen_of_hearts.png')} style={styles.playingCardImage}>
+            <DeckSwiper
+              dataSource={deck}
+              renderItem={item =>
+                <Card style={styles.card}>
+                <CardItem style={styles.playingCard}>
+                <Image source={item.image} style={styles.playingCardImage}>
 
                 </Image>
-              </CardItem>
+                </CardItem>
 
 
-            </Card>
+                </Card>
+              }/>
             <Text style={styles.playingCardDescription}>
               14 Pushups!
             </Text>
@@ -68,8 +82,8 @@ class workout extends Component {
 
 var styles = StyleSheet.create({
   card: {
-    marginLeft: 27,
-    marginRight: 27,
+    marginLeft: 25,
+    marginRight: 29,
     paddingLeft: 6.5,
     justifyContent: 'center'
   },
