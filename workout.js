@@ -39,19 +39,21 @@ class workout extends Component {
             <DeckSwiper
               dataSource={deck}
               renderItem={item =>
-                <Card style={styles.card}>
-                <CardItem style={styles.playingCard}>
-                <Image source={item.image} style={styles.playingCardImage}>
+                <View>
+                  <Card style={styles.card}>
+                  <CardItem style={styles.playingCard}>
+                  <Image source={item.image} style={styles.playingCardImage}>
 
-                </Image>
-                </CardItem>
+                  </Image>
+                  </CardItem>
 
 
-                </Card>
+                  </Card>
+                  <Text style={styles.playingCardDescription}>
+                  {item.text}
+                  </Text>
+                </View>
               }/>
-            <Text style={styles.playingCardDescription}>
-              14 Pushups!
-            </Text>
           </Content>
           </Image>
 
