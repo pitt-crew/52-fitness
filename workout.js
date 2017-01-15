@@ -21,13 +21,14 @@ class workout extends Component {
       this.state = {
 
       };
-      this.deck = [{
-        text: '2 pushups',
-        image: require('./app/images/2_of_clubs.png')
-      },{
-        text: '20 pushups',
-        image: require('./app/images/king_of_clubs.png')
-      }];
+      // this.deck = [{
+      //   text: '2 pushups',
+      //   image: require('./app/images/2_of_clubs.png')
+      // },{
+      //   text: '20 pushups',
+      //   image: require('./app/images/king_of_clubs.png')
+      // }];
+      this.deck = this.makeDeck();
 
     }
 
