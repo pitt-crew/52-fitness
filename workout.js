@@ -19,15 +19,21 @@ class workout extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        deck: this.makeDeck()
+
       };
-      // this.deck;
+      this.deck = [{
+        text: '2 pushups',
+        image: require('./app/images/2_of_clubs.png')
+      },{
+        text: '20 pushups',
+        image: require('./app/images/king_of_clubs.png')
+      }];
 
     }
 
-    componentWillMount() {
-      this.makeDeck();
-    }
+    // componentWillMount() {
+    //   this.makeDeck();
+    // }
 
     makeDeck() {
       const ranks = new Array("ace", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -61,12 +67,12 @@ class workout extends Component {
 
           <Content>
             <DeckSwiper
-              dataSource={this.state.deck}
+              dataSource={this.deck}
               renderItem={item =>
                 <View>
                   <Card style={styles.card}>
                   <CardItem style={styles.playingCard}>
-                  <Image source={require(item.image)} style={styles.playingCardImage}>
+                  <Image source={item.image} style={styles.playingCardImage}>
 
                   </Image>
                   </CardItem>
