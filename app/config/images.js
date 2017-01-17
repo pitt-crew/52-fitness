@@ -1,7 +1,58 @@
-// const images = {
-//   deck: {
-//     twoClubs: require('../images/2_of_clubs.svg')
-//   }
-// };
-//
-// export default images;
+const images = {
+  deck: {
+    twoClubs: require('../images/2_of_clubs.png'),
+    threeClubs: require('../images/3_of_clubs.png'),
+    fourClubs: require('../images/4_of_clubs.png'),
+    fiveClubs: require('../images/5_of_clubs.png'),
+    sixClubs: require('../images/6_of_clubs.png'),
+    sevenClubs: require('../images/7_of_clubs.png'),
+    eightClubs: require('../images/8_of_clubs.png'),
+    nineClubs: require('../images/9_of_clubs.png'),
+    tenClubs: require('../images/10_of_clubs.png'),
+    jackClubs: require('../images/jack_of_clubs.png'),
+    queenClubs: require('../images/queen_of_clubs.png'),
+    kingClubs: require('../images/king_of_clubs.png'),
+    aceClubs: require('../images/ace_of_clubs.png'),
+    twoHearts: require('../images/2_of_hearts.png'),
+    threeHearts: require('../images/3_of_hearts.png'),
+    fourHearts: require('../images/4_of_hearts.png'),
+    fiveHearts: require('../images/5_of_hearts.png'),
+    sixHearts: require('../images/6_of_hearts.png'),
+    sevenHearts: require('../images/7_of_hearts.png'),
+    eightHearts: require('../images/8_of_hearts.png'),
+    nineHearts: require('../images/9_of_hearts.png'),
+    tenHearts: require('../images/10_of_hearts.png'),
+    jackHearts: require('../images/jack_of_hearts.png'),
+    queenHearts: require('../images/queen_of_hearts.png'),
+    kingHearts: require('../images/king_of_hearts.png'),
+    aceHearts: require('../images/ace_of_hearts.png'),
+    twoSpades: require('../images/2_of_spades.png'),
+    threeSpades: require('../images/3_of_spades.png'),
+    fourSpades: require('../images/4_of_spades.png'),
+    fiveSpades: require('../images/5_of_spades.png'),
+    sixSpades: require('../images/6_of_spades.png'),
+    sevenSpades: require('../images/7_of_spades.png'),
+    eightSpades: require('../images/8_of_spades.png'),
+    nineSpades: require('../images/9_of_spades.png'),
+    tenSpades: require('../images/10_of_spades.png'),
+    jackSpades: require('../images/jack_of_spades.png'),
+    queenSpades: require('../images/queen_of_spades.png'),
+    kingSpades: require('../images/king_of_spades.png'),
+    aceSpades: require('../images/ace_of_spades.png'),
+    twoDiamonds: require('../images/2_of_diamonds.png'),
+    threeDiamonds: require('../images/3_of_diamonds.png'),
+    fourDiamonds: require('../images/4_of_diamonds.png'),
+    fiveDiamonds: require('../images/5_of_diamonds.png'),
+    sixDiamonds: require('../images/6_of_diamonds.png'),
+    sevenDiamonds: require('../images/7_of_diamonds.png'),
+    eightDiamonds: require('../images/8_of_diamonds.png'),
+    nineDiamonds: require('../images/9_of_diamonds.png'),
+    tenDiamonds: require('../images/10_of_diamonds.png'),
+    jackDiamonds: require('../images/jack_of_diamonds.png'),
+    queenDiamonds: require('../images/queen_of_diamonds.png'),
+    kingDiamonds: require('../images/king_of_diamonds.png'),
+    aceDiamonds: require('../images/ace_of_diamonds.png')
+  }
+};
+
+export default images;

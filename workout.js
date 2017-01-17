@@ -13,6 +13,7 @@ import { Container, Header, Title, Content, Card, CardItem, DeckSwiper, Footer, 
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import appTheme from './app/themes/52fitnessTheme';
 import AppButton from './app/components/Button/Button';
+import images from './app/config/images';
 /*Add any other components that we need on this screen here*/
 
 class workout extends Component {
@@ -37,19 +38,19 @@ class workout extends Component {
     // }
 
     makeDeck() {
-      const ranks = new Array("ace", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+      const ranks = new Array("ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
                     "jack", "queen", "king");
-      const suits = new Array("clubs", "diamonds", "hearts", "spades");
+      const suits = new Array("Clubs", "Diamonds", "Hearts", "Spades");
 
       let deck = [];
-      let imgUrl;
+      let card;
 
       for(let i = 0; i < suits.length; i++) {
         for(let j = 0; j < ranks.length; j++) {
-          imgUrl = './app/images/' + ranks[j] + '_of_' + suits[i] + '.png';
+          card = ranks[j] + suits[i]
           deck.push({
             text: '' + ranks[j] + ' Pushups',
-            image: imgUrl
+            image: images.deck[card]
           })
         }
       }
