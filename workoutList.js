@@ -1,5 +1,5 @@
 'use strict';
- 
+
 import React, { Component } from 'react'
 import {
   StyleSheet,
@@ -15,6 +15,7 @@ import appTheme from './app/themes/52fitnessTheme';
 import AppButton from './app/components/Button/Button';
 import WorkoutItem from './app/components/WorkoutItem';
 var homePage = require('./homePage');
+var workout = require('./workout')
 /*Add any other components that we need on this screen here*/
 
 var styles = StyleSheet.create({
@@ -36,6 +37,22 @@ var styles = StyleSheet.create({
 });
 
 class workoutList extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+          workouts: [
+          {
+            title: 'Lower Body'
+          },
+          {
+            title: 'Core'
+          },
+          {
+            title: 'MMA'
+          }]
+      };
+    };
+
     _handleBackPress() {
       this.props.navigator.pop();
     }
@@ -45,39 +62,29 @@ class workoutList extends Component {
     }
   	render() {
       const nextRoute = {
-          component: homePage,
-          title: 'Home page!',
+          component: workout,
+          title: 'Workout',
           passProps: { myProp: 'bar' }
       };
+
+      let Arr = this.state.workouts.map(a => {
+        return <WorkoutItem name={a.title}/>
+      })
     	return (
-        <Container theme={appTheme} style={styles.container}> 
+        <Container theme={appTheme} style={styles.container}>
           <Header>
           </Header>
 
-           <Image source={require('./app/images/backgrounds/lodyas.png')} 
+           <Image source={require('./app/images/backgrounds/lodyas.png')}
                style={styles.landingBackground} >
 
           <Content>
 
             <List style={styles.listContainer}>
                 <ListItem onPress={() => this._handleNextPress(nextRoute)}>
-                    <Text>Workout 1</Text>
+                    <Text>Upper Body</Text>
                 </ListItem>
-                <WorkoutItem name="Workout 2" />
-                <WorkoutItem name="Workout 3" />
-                <WorkoutItem name="Workout 4" />
-                <WorkoutItem name="Workout 5" />
-                <WorkoutItem name="Workout 6" />
-                <WorkoutItem name="Workout 7" />
-                <WorkoutItem name="Workout 8" />
-                <WorkoutItem name="Workout 9" />
-                <WorkoutItem name="Workout 10" />
-                <WorkoutItem name="Workout 11" />
-                <WorkoutItem name="Workout 12" />
-                <WorkoutItem name="Workout 13" />
-                <WorkoutItem name="Workout 14" />
-                <WorkoutItem name="Workout 15" />
-                <WorkoutItem name="Workout 16" />
+                {Arr}
 
             </List>
 

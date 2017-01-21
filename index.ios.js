@@ -27,8 +27,8 @@ export default class fiftytwofitness extends React.Component {
       <ReactNative.NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'Workout',
-          component: workout
+          title: 'Workouts',
+          component: workoutList
         }}/>
     );
   }
