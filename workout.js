@@ -20,41 +20,74 @@ class workout extends Component {
     constructor(props) {
       super(props);
       this.state = {
-
+          exercises: {
+            a: 'Pushups',
+            b: 'Sit-ups',
+            c: 'Pull-ups',
+            d: 'Flutter-kicks'
+          }
       };
-      // this.deck = [{
-      //   text: '2 pushups',
-      //   image: require('./app/images/2_of_clubs.png')
-      // },{
-      //   text: '20 pushups',
-      //   image: require('./app/images/king_of_clubs.png')
-      // }];
-      this.deck = this.makeDeck();
 
+      this.deck = this.makeDeck();
+      this.deck = this.shuffle(this.deck)
     }
 
-    // componentWillMount() {
-    //   this.makeDeck();
-    // }
+    textify(text) {
+      let result;
+
+      if(text === 'ace') {
+        result = 'Fourteen';
+      } else if(text === 'jack') {
+        result = 'Eleven';
+      } else if(text === 'queen') {
+        result = 'Twelve';
+      } else if(text === 'king') {
+        result = 'Thirteen';
+      } else {
+        text = text.charAt(0).toUpperCase() + text.slice(1);
+        result = text;
+      }
+      return result;
+    };
 
     makeDeck() {
       const ranks = new Array("ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
                     "jack", "queen", "king");
-      const suits = new Array("Clubs", "Diamonds", "Hearts", "Spades");
+      const suits = new Array(["Clubs", this.state.exercises.a], ["Diamonds", this.state.exercises.b], ["Hearts", this.state.exercises.c], ["Spades", this.state.exercises.d]);
 
       let deck = [];
       let card;
+      let rank;
 
       for(let i = 0; i < suits.length; i++) {
         for(let j = 0; j < ranks.length; j++) {
-          card = ranks[j] + suits[i]
+          card = ranks[j] + suits[i][0]
+          rank = this.textify(ranks[j])
           deck.push({
-            text: '' + ranks[j] + ' Pushups',
+            text: rank + " " + suits[i][1],
             image: images.deck[card]
           })
         }
       }
       return deck;
+    };
+
+    shuffle(array) {
+      var currentIndex = array.length, temporaryValue, randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+      return array;
     }
 
   	render() {
