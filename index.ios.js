@@ -28,7 +28,7 @@ export default class fiftytwofitness extends React.Component {
         style={styles.container}
         initialRoute={{
           title: 'Workouts',
-          component: workoutList
+          component: homePage
         }}/>
     );
   }
