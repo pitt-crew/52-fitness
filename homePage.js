@@ -11,7 +11,7 @@ import {
   ActivityIndicator,
   Image
 } from 'react-native';
-import { Container, Header, List, Title, Content, Badge, Button, InputGroup, Input, Icon, H1, H2, H3, Text } from 'native-base';
+import { Container, Header, List, Title, Content, Badge, Button, Icon, Text, Footer, FooterTab} from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 import appTheme from './app/themes/52fitnessTheme';
@@ -23,22 +23,19 @@ var workoutData = require('./app/data/workouts');
 var styles = StyleSheet.create({
   container: {
     backgroundColor: '#F0F0F5',
-    flex: 1
+    flex: 1,
   },
   header: {
     backgroundColor: '#329F9F',
   },
-  gridList: {
+   gridList: {
+    flex: .7,
     justifyContent: 'center',
     flexDirection: 'row',
     flexWrap: 'wrap'
   },
-  gridItem: {
-     backgroundColor: '#CCC',
-     margin: 10,
-     padding: 10,
-     width: 150,
-     height: 150
+  footer: {
+    flex: 3,
   }
 });
 
@@ -60,19 +57,40 @@ class homePage extends Component {
     render() {
       return (
         <Container theme={appTheme} style={styles.container}> 
-          <Content style={{flex: 1}}>
+          <Header style={styles.header}>
+          </Header>
+
+          <Content>
 
               <ListView contentContainerStyle={styles.gridList}
                 dataSource={this.state.dataSource}
-                renderRow={(rowData) => <Text style={styles.gridItem}>{rowData.workoutName}</Text>}
+                renderRow={(rowData) =>  <WorkoutBox name={rowData.workoutName}/>}
               /> 
-            
-              { /*<AppFooter/>*/ }
-            
+
           </Content>
 
-
-
+        {/*Componrent version of footer not working*/}
+        {/*<AppFooter></AppFooter>*/}
+        <Footer style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>
+          <FooterTab>
+              <Button transparent>
+                  Home
+                  <Icon name='ios-home' />
+              </Button>
+              <Button>
+                Browse
+                  <Icon name='ios-list' />
+              </Button>
+              <Button>
+                Search
+                  <Icon name='ios-search' />
+              </Button>
+              <Button>
+                Add Workout
+                  <Icon name='ios-add-circle' />
+              </Button>
+          </FooterTab>
+        </Footer>
 
         </Container>
         

@@ -1,11 +1,9 @@
 'use strict';
 import React, { Component } from 'react';
 import {  } from 'react-native';
-import { Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Footer, FooterTab, Button, Icon } from 'native-base';
  
 export default class AppFooter extends Component {
-    props: {
-    }
     render() {
         return (
             <Footer style={{position: 'absolute', left: 0, right: 0, bottom: 0}}>

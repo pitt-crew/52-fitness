@@ -28,7 +28,8 @@ export default class fiftytwofitness extends React.Component {
         style={styles.container}
         initialRoute={{
           title: 'Workouts',
-          component: homePage
+          component: homePage,
+          barTintColor: '#329F9F'
         }}/>
     );
   }
